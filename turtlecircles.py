@@ -4,13 +4,14 @@ radius = 100
 rotation = 126
 turtle.speed(0)
 turtle.pendown()
+numCircles = 21
 
-for i in range(20):
+for i in range(numCircles):
     # set a different color and size, alternating every three circles
-    if(i%3==1):
+    if(i<6):
         turtle.pencolor("dark green")
         turtle.pensize(2)
-    elif(i%3==2):
+    elif(i<12):
         turtle.pencolor("purple")
         turtle.pensize(2)
     else:
