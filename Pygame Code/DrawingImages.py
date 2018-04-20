@@ -10,7 +10,7 @@ pygame.init()
 # Create a window surface object
 canvas = pygame.display.set_mode((640,480))
 # You can set a caption at the top of the window
-pygame.display.set_caption("Drawing Shapes")
+pygame.display.set_caption("Drawing Images")
 
 # Make some color variables
 purple = pygame.Color(176, 66, 244)

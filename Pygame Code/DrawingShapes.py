@@ -16,7 +16,6 @@ pygame.display.set_caption("Drawing Shapes")
 purple = pygame.Color(176, 66, 244)
 teal = pygame.Color(11, 130, 100)
 slate = pygame.Color(23, 43, 56)
-pigImage = pygame.image.load("pig.jpg")
 
 # Now we begin the "stuff that's done every game loop."
 
@@ -29,8 +28,6 @@ while True:
     pygame.draw.circle(canvas, teal, (320, 240), 50)
     pygame.draw.circle(canvas, teal, (320, 345), 50, 5)
     pygame.draw.rect(canvas, purple, (10, 10, 50, 100))
-
-    canvas.blit(pigImage, ((640-138), (480-137))) 
         
     # We need a for loop to handle events
     for event in pygame.event.get(): #get() returns a list of all the events that occurred since last time it was called
