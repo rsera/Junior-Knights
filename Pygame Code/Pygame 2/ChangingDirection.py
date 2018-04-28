@@ -10,7 +10,7 @@ pygame.init()
 # Create a window surface object
 canvas = pygame.display.set_mode((640,480))
 # You can set a caption at the top of the window
-pygame.display.set_caption("Moving Circle")
+pygame.display.set_caption("ChangingDirection")
 
 # Make some color variables
 teal = pygame.Color(11, 130, 100)
@@ -19,6 +19,10 @@ slate = pygame.Color(23, 43, 56)
 # Make the position values for the circle variable
 x = 320
 y = 240
+
+# Also make variables for the rate of change ("delta") of the position
+dx = 1
+dy = 1
 
 # Now we begin the "stuff that's done every game loop."
 
@@ -30,8 +34,14 @@ while True:
     # we want to draw our shapes below canvas.fill(), because otherwise, we'd be filling over our shapes
     pygame.draw.circle(canvas, teal, (x, y), 50)
 
-    x = x + 1
-    y = y + 1
+    if x >= 640 or x <= 0:
+        dx = -dx
+
+    if y >= 480 or y <= 0:
+        dy = -dy
+
+    x = x + dx
+    y = y + dy
     
     # Slow down the frame rate to show the movement more slowly
     clockObject = pygame.time.Clock()
@@ -49,11 +59,6 @@ while True:
             if event.key == K_ESCAPE:
                 pygame.quit()
                 sys.exit()
-
-        # Once we want to deal with other events (like the player clicking mouse buttons
-        # or pressing keys), we'll use elif statements here, after the exit checks
-        # to check for those events too
-
-    
+   
     # update draws the window (and its contents) at the end of every loop
     pygame.display.update()
