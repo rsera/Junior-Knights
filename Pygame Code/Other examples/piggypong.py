@@ -1,4 +1,4 @@
-# Always import pygame and sys (system)
+5# Always import pygame and sys (system)
 import pygame, sys
 from pygame.locals import *
 
