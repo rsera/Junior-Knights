@@ -10,7 +10,6 @@ pygame.display.set_caption("Making a Window")
 purple = pygame.Color(176,66,244)
 teal = pygame.Color(11,130,100)
 slate = pygame.Color(23, 43, 56)
-pig = pygame.image.load("pig.jpg")
 
 x = 320
 y = 240
